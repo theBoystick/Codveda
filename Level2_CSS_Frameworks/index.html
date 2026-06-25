@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Products - CSS Framework UI with Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 0.4s ease;
+        }
+
+        /* Custom gradient */
+        .gradient-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .gradient-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        /* Smooth transitions */
+        .transition-smooth {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Hover effects */
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-hover:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="gradient-primary shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-white font-bold text-2xl">💻 TechHub</div>
+            <div class="hidden md:flex gap-6 text-white">
+                <a href="#products" class="hover:text-purple-200 transition-smooth">Produits</a>
+                <a href="#features" class="hover:text-purple-200 transition-smooth">Fonctionnalités</a>
+                <a href="#pricing" class="hover:text-purple-200 transition-smooth">Tarification</a>
+                <a href="#contact" class="hover:text-purple-200 transition-smooth">Contact</a>
+            </div>
+            <button class="md:hidden text-white">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-primary text-white py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center fade-in-up">
+            <h1 class="text-5xl font-bold mb-6">Bienvenue chez TechHub</h1>
+            <p class="text-xl mb-8 opacity-90">Découvrez les meilleurs produits technologiques du marché</p>
+            <button
+                class="bg-white text-purple-600 font-bold py-3 px-8 rounded-lg btn-hover transition-smooth shadow-lg">
+                Commencer maintenant
+            </button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4 text-gray-800">Nos Produits Vedette</h2>
+            <p class="text-center text-gray-600 mb-12">Sélection exclusive de technologie de pointe</p>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="px-6 py-2 rounded-full bg-purple-600 text-white filter-btn active">Tous</button>
+                <button class="px-6 py-2 rounded-full bg-gray-200 text-gray-700 filter-btn hover:bg-purple-600 hover:text-white transition-smooth">Téléphones</button>
+                <button class="px-6 py-2 rounded-full bg-gray-200 text-gray-700 filter-btn hover:bg-purple-600 hover:text-white transition-smooth">Ordinateurs</button>
+                <button class="px-6 py-2 rounded-full bg-gray-200 text-gray-700 filter-btn hover:bg-purple-600 hover:text-white transition-smooth">Accessoires</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover transition-smooth slide-in"
+                    style="animation-delay: 0.1s">
+                    <img src="https://via.placeholder.com/300x200/667eea/ffffff?text=Smartphone+Pro"
+                        alt="Smartphone Pro" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Smartphone Pro Max</h3>
+                        <p class="text-gray-600 mb-4">Écran AMOLED 6.7", Processeur dernier cri, 5G ultra-rapide
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-600">999€</span>
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-smooth">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover transition-smooth slide-in"
+                    style="animation-delay: 0.2s">
+                    <img src="https://via.placeholder.com/300x200/764ba2/ffffff?text=Laptop+Ultra"
+                        alt="Laptop Ultra" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Laptop Ultra Fin</h3>
+                        <p class="text-gray-600 mb-4">16" Retina Display, SSD 1TB, RAM 32GB, Batterie 20h</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-600">1499€</span>
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-smooth">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover transition-smooth slide-in"
+                    style="animation-delay: 0.3s">
+                    <img src="https://via.placeholder.com/300x200/f5576c/ffffff?text=Smartwatch" alt="Smartwatch"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Smartwatch Elite</h3>
+                        <p class="text-gray-600 mb-4">Suivi santé avancé, Autonomie 7 jours, Étanche IP68</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-600">349€</span>
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-smooth">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover transition-smooth slide-in"
+                    style="animation-delay: 0.4s">
+                    <img src="https://via.placeholder.com/300x200/667eea/ffffff?text=Headphones+Premium"
+                        alt="Headphones Premium" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Headphones Premium</h3>
+                        <p class="text-gray-600 mb-4">ANC actif, Qualité Hi-Fi, Confort optimisé, Batterie 40h</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-600">299€</span>
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-smooth">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover transition-smooth slide-in"
+                    style="animation-delay: 0.5s">
+                    <img src="https://via.placeholder.com/300x200/764ba2/ffffff?text=Tablet+Power"
+                        alt="Tablet Power" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Tablet Power</h3>
+                        <p class="text-gray-600 mb-4">Écran 12.9", Stylet inclus, 256GB stockage, 120Hz</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-600">799€</span>
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-smooth">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover transition-smooth slide-in"
+                    style="animation-delay: 0.6s">
+                    <img src="https://via.placeholder.com/300x200/f5576c/ffffff?text=Camera+Pro"
+                        alt="Camera Pro" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Camera Pro</h3>
+                        <p class="text-gray-600 mb-4">Capteur 48MP, Vidéo 8K, Stabilisation optique, RAW natif</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-600">1199€</span>
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-smooth">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Pourquoi Choisir TechHub ?</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🚚</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Livraison Gratuite</h3>
+                    <p class="text-gray-600">Expédition rapide et sécurisée partout en Europe</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">100% Sécurisé</h3>
+                    <p class="text-gray-600">Paiements cryptés et protection des données garantie</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="text-center">
+                    <div class="text-5xl mb-4">↩️</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Retours Faciles</h3>
+                    <p class="text-gray-600">30 jours pour retourner vos achats sans questions</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="text-center">
+                    <div class="text-5xl mb-4">💬</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Support 24/7</h3>
+                    <p class="text-gray-600">Équipe d'assistance disponible à tout moment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="gradient-secondary text-white py-16 px-4">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Restez Informé</h2>
+            <p class="mb-6 opacity-90">Inscrivez-vous pour recevoir les dernières offres et nouveautés</p>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <input type="email" placeholder="Votre email" class="flex-1 px-4 py-3 rounded text-gray-800">
+                <button class="bg-gray-800 hover:bg-gray-900 text-white px-8 py-3 rounded font-bold transition-smooth">
+                    S'inscrire
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4">À Propos</h3>
+                    <p class="text-gray-400">Votre destination de confiance pour la technologie premium</p>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Produits</h3>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><a href="#" class="hover:text-white transition-smooth">Téléphones</a></li>
+                        <li><a href="#" class="hover:text-white transition-smooth">Ordinateurs</a></li>
+                        <li><a href="#" class="hover:text-white transition-smooth">Accessoires</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Support</h3>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><a href="#" class="hover:text-white transition-smooth">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-smooth">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-smooth">Retours</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Réseaux</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="hover:text-purple-400 transition-smooth">Facebook</a>
+                        <a href="#" class="hover:text-purple-400 transition-smooth">Twitter</a>
+                        <a href="#" class="hover:text-purple-400 transition-smooth">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TechHub. Tous droits réservés. | Créé avec Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
